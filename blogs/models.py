@@ -20,8 +20,8 @@ STATUS_CHOICES=(
 
 class Blog(models.Model):
     title=models.CharField(max_length=100)
-    slug=models.SlugField(max_length=15,unique=True)
-    Category=models.ForeignKey(Category,on_delete=models.CASCADE)
+    slug=models.SlugField(max_length=100,unique=True)
+    Category=models.ForeignKey(Category,on_delete=models.CASCADE)#fk stores the id of pk #django will store it as category_id 
     author=models.ForeignKey(User,on_delete=models.CASCADE)
     featured_image=models.ImageField(upload_to='uploads/%Y/%m/%d')
     short_description=models.TextField(max_length=500)
