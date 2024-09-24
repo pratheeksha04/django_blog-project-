@@ -25,6 +25,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
     path('category/',include('blogs.urls')),#http://127.0.0.1:8000/category #http://127.0.0.1:8000/category/2/
-    path('<slug:slug>/',BlogViews.blogs,name='blogs'),
-    path('blogs/search/',BlogViews.search,name="search")
+    path('blogs/<slug:slug>/',BlogViews.blogs,name='blogs'),
+    path('blogs/search/',BlogViews.search,name="search"),
+    path('register/',views.register,name='register'),#http://127.0.0.1:8000/register
+    path('login/',views.login,name='login'),#http://127.0.0.1:8000/login
+    path('logout/',views.logout,name='logout'),#http://127.0.0.1:8000/logout
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
