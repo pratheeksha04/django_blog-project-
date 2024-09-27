@@ -30,4 +30,5 @@ urlpatterns = [
     path('register/',views.register,name='register'),#http://127.0.0.1:8000/register
     path('login/',views.login,name='login'),#http://127.0.0.1:8000/login
     path('logout/',views.logout,name='logout'),#http://127.0.0.1:8000/logout
+    path('dashboard/',include('dashboards.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
